@@ -271,5 +271,13 @@ public class BSTTest
         bst.put(2, 2);
         bst.put(1, 1);
         assertEquals("Testing LCA on tree that is essentially linkedlist", (Integer)3, bst.lowestCommonAncestor(1, 3));
+        bst = new BST<Integer, Integer>();
+        bst.put(1, 1);
+        bst.put(3, 3);
+        bst.put(2, 2);
+        bst.put(4, 4);
+        bst.put(0, 0);
+        bst.put(5, 5);
+        assertEquals("Testing LCA on larger tree with root not as LCA", (Integer)3, bst.lowestCommonAncestor(2, 4));
     }
 }
