@@ -99,7 +99,7 @@ public class DAGTest {
         Node[] firstAnswerNodes = {root, secondNode};
         assertArrayEquals("Testing LCA on wikipedia graph", firstAnswerNodes, secondGraph.LCA(thirdNode, fourthNode));
     }
-    
+
 
 }
 
