@@ -280,4 +280,25 @@ public class BSTTest
         bst.put(5, 5);
         assertEquals("Testing LCA on larger tree with root not as LCA", (Integer)3, bst.lowestCommonAncestor(2, 4));
     }
+
+    //Testing if a node can have more than 2 children
+    @Test
+    public void testAddingMultipleNodesAsDAG()
+    {
+        BST<Integer, Integer> dag = new BST<Integer, Integer>();
+        dag.put(3,3);
+        dag.put(1,1);
+        dag.put(2,2);
+        //In theory, if we implemented this as a DAG we could get a graph like
+        //        3
+        //      /   \
+        //     1     2
+        // So we'll test the height to be 1, but from my guess due to the binary tree implementation being so limited our tree will look like
+        //         3
+        //        /
+        //       1
+        //         \
+        //          2
+        assertEquals("Using height to test if DAG works as binary tree or as DAG", 1, dag.height());
+    }
 }
